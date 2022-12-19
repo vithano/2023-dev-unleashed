@@ -1,0 +1,21 @@
+modules:
+  macro:
+    - key: super-forge
+      resource: super-forge-frontend
+      resolver:
+        function: resolver
+      title: Super-Forge
+      description: Inserts a blank project template
+  function:
+    - key: resolver
+      handler: index.handler
+
+resources:
+  - key: super-forge-frontend
+    path: static/super-forge-frontend/dist
+    tunnel:
+      port: 3001
+permissions:
+  content:
+    styles:
+      - unsafe-inline
